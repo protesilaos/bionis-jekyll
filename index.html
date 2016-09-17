@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="index">
+  <h1>Latest posts</h1>
+  <div>
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <time>{{ post.date | date: site.date_format }}</time>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

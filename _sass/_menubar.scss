@@ -1,0 +1,85 @@
+.menubar {
+  background: $dbg;
+  color: $dt1;
+
+  @include desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: ($measure / 2) - 2;
+  }
+
+  small {
+    color: $dt2;
+  }
+}
+
+.menubar-inner {
+  padding: $sone;
+  max-width: $measure;
+  margin: 0 auto;
+  font-family: $fontui;
+  font-size: $ssize;
+  text-align: left;
+
+  @include tablet {
+    font-size: $msize;
+  }
+
+  @include desktop {
+    position: absolute;
+    right: $sone;
+    bottom: $sone;
+    left: $sone;
+    padding: $sone;
+  }
+
+  .menubar-navigation {
+    ul {
+      display: inline;
+      list-style-type: none;
+      margin: ($vrythm / 2) 0 0;
+      padding: 0;
+
+      @include desktop {
+        display: block;
+      }
+
+      li {
+        display: inline-block;
+        margin-right: $sone;
+        line-height: $sone * 2;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        @include tablet {
+          line-height: $vrythm;
+        }
+
+        @include desktop {
+          display: block;
+          padding: ($sone * 0.2) 0;
+        }
+      }
+    }
+  }
+
+  .menubar-header {
+    margin-bottom: $vrythm / 2;
+
+    @include desktop {
+      margin-bottom: $vrythm;
+    }
+
+    small {
+      display: none;
+
+      @include desktop {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+.footer-inner {
+  @extend .container;
+  font-family: $fontui;
+  color: $text2;
+  padding: 0 $sone ($sone * 2);
+}

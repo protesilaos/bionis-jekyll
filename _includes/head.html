@@ -1,0 +1,30 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml" >
+
+  {{ seo }}
+
+  <!-- Inline main CSS for better performance -->
+
+  <style type="text/css">
+    {% capture include_to_scssify %}
+      {% include bionis.scss %}
+    {% endcapture %}
+    {{ include_to_scssify | scssify }}
+  </style>
+
+  <!-- Asynchronous load of secondary CSS for better performance -->
+
+  <link rel="preload" href="{{ site.baseurl }}/css/bionis-secondary.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ site.baseurl }}/css/bionis-secondary.css"></noscript>
+
+  <!-- Minified loadCSS scripts (https://github.com/filamentgroup/loadCSS) -->
+
+  <script type="text/javascript">
+   {% include main.min.js %}
+  </script>
+
+</head>

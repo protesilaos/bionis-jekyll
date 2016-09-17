@@ -1,0 +1,24 @@
+# Site settings
+title: Your Site Title
+email: example@your-site.com
+description: "Description of the site"
+url: "http://www.protesilaos.com"
+baseurl: "/bionis-jekyll"
+date_format: "%Y-%m-%d"
+
+# Build settings
+incremental: false
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: false
+  footnote_backlink: ^
+  hard_wrap: false
+  syntax_highlighting: rouge
+highlighter: rouge
+permalink: pretty
+sass:
+  style: compressed
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag

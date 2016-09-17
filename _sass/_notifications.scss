@@ -1,0 +1,19 @@
+.note {
+  @include notification($blu, $blu);
+  @extend %notification;
+}
+
+.info {
+  @include notification($gre, $gre);
+  @extend %notification;
+}
+
+.warn {
+  @include notification($yel, $yel);
+  @extend %notification;
+}
+
+.critical {
+  @include notification($red, $red);
+  @extend %notification;
+}

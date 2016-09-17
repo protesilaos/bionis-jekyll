@@ -1,0 +1,6 @@
+# The `name` value shows up in the menu.
+
+- name: About
+  url: "/author/"
+- name: Contact
+  url: "/contact/"

@@ -1,0 +1,19 @@
+.menu-social {
+  list-style: none;
+  margin: $vrythm 0 0 -#{$sone / 2}; // Aligns with menubar based on below li padding value
+  padding: 0;
+
+  li {
+    display: inline;
+    padding: $sone / 2;
+    margin-right: $sone / 2;
+
+    @include desktop {
+      margin-right: $sone * 0.25;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+a {
+  color: $primary1;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: $tertiary1;
+  }
+
+  &:not(.skip-link):focus {
+    background: transparentize($tertiary1, 0.9);
+    outline: thin dashed $tertiary3;
+  }
+
+  article & {
+    border-bottom: thin solid $primary1;
+
+    &:hover {
+      border-bottom: thin solid $tertiary1;
+    }
+
+    &[href^="#fn"] {
+      border-bottom: none;
+
+      &::before {
+        content: "[";
+        @extend %pseudomark;
+      }
+
+      &::after {
+        content: "]";
+        @extend %pseudomark;;
+      }
+    }
+  }
+}

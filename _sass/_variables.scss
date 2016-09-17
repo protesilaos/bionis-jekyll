@@ -1,0 +1,159 @@
+// Type --------------------------------------------
+
+$sans: Verdana, "DejaVu Sans", sans-serif !default;
+$sans-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Liberation Sans", sans-serif !default;
+$serif: Georgia, "Bitstream Charter", serif !default;
+$mono: Menlo, "Lucida Sans Typewriter", "Lucida Console", "DejaVu Sans Mono", "Liberation Mono", Courier, monospace !default;
+
+$font1: $serif !default; // Article body
+$font2: $sans !default; // Headings, footnotes, etc.
+$fontui: $sans-ui !default; // Menu, navigation, etc.
+
+$base-font-size: 14px !default;
+$line-height: 1.602 !default;
+$vrythm: 1.602rem !default;
+
+// Major second
+
+$xxlsize: 1.476rem !default;
+$xlsize: 1.266rem !default;
+$lsize: 1.125rem !default;
+$msize: 1rem !default;
+$ssize: .889rem !default;
+$xssize: .79rem !default;
+$xxssize: .702rem !default;
+
+// Space -------------------------------------------
+
+$sone: 1rem;
+$measure: 42rem;
+
+// Viewports
+
+$tablet: 44.375em;
+$desktop: 75em;
+
+// Dividers
+
+$dark1: rgba(#000, .05) !default;
+$dark2: rgba(#000, .1) !default;
+
+$penumbra: 0 1px 3px $dark2 !default;
+
+// Colours -----------------------------------------
+// Bionis scheme (http://www.protesilaos.com/bionis)
+
+$dbg: #281D2A !default;
+$dhl: #382D3A !default;
+$dt2: #786D7A !default;
+$dt1: #A89DAA !default;
+
+$lbg: #F9F5FA !default;
+$lhl: #E9E5EA !default;
+$lt2: #99959A !default;
+$lt1: #39353A !default;
+
+$red: #C25A5B !default;
+$ora: #CB6832 !default;
+$yel: #BA8A00 !default;
+$gre: #4DA35C !default;
+
+$cya: #439B9B !default;
+$blu: #5A8ACD !default;
+$vio: #AA6BC5 !default;
+$mag: #C25783 !default;
+
+// Visual order
+
+$primary1: $blu !default;
+$primary2: $vio !default;
+$primary3: $gre !default;
+
+$secondary1: $cya !default;
+$secondary2: $red !default;
+
+$tertiary1: $ora !default;
+$tertiary2: $yel !default;
+$tertiary3: $mag !default;
+
+// Base values
+
+$text1: $lt1;
+$text2: $lt2;
+$bg: $lbg;
+
+// Mixins ------------------------------------------
+
+@mixin shadow {
+  -webkit-box-shadow: $penumbra;
+  -moz-box-shadow: $penumbra;
+  -ms-box-shadow: $penumbra;
+  box-shadow: $penumbra;
+}
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin radius($degree) {
+  -webkit-border-radius: $degree;
+  -moz-border-radius: $degree;
+  -ms-border-radius: $degree;
+  border-radius: $degree;
+}
+
+@mixin transition {
+  -webkit-transition: all ease-in-out 300ms;
+  -moz-transition: all ease-in-out 300ms;
+  -o-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
+}
+
+@mixin notification($bg-colour, $border-colour) {
+  background: transparentize($bg-colour, 0.9);
+  border: thin solid transparentize($border-colour, 0.7);
+}
+
+@mixin tablet {
+  @media screen and (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+// Placeholders ------------------------------------
+
+%clearfix {
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+  @extend %clearfix::before;
+    clear: both;
+  }
+}
+
+%pseudomark {
+  display: inline;
+  color: $text2;
+  font-weight: 400;
+}
+
+%notification {
+  font-family: $sans;
+  font-size: $ssize;
+  padding: $sone;
+
+  code {
+    background: $dark1;
+    border: thin solid $dark2;
+  }
+}

@@ -1,0 +1,15 @@
+.footnotes {
+  font-family: $fontui;
+  font-size: $ssize;
+  margin: $vrythm 0 0;
+
+  &::before {
+    content: "----------";
+    display: block;
+    color: $text2;
+  }
+
+  p {
+    margin: 0 0 ($vrythm / 2);
+  }
+}

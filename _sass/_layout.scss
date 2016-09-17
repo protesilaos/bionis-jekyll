@@ -1,0 +1,70 @@
+.clearfix {
+  @extend %clearfix;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  padding: ($sone * 2) $sone;
+  max-width: $measure;
+
+  @include desktop {
+    position: relative;
+    margin-left: ($measure * 0.75) - 2;
+  }
+}
+
+.index {
+  font-family: $fontui;
+
+  div {
+    margin: $vrythm 0;
+    @extend %clearfix;
+
+    + div:not(.paletterow) {
+      margin: $vrythm 0 0;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: ($sone / 2) 0;
+      @extend %clearfix;
+
+      + li {
+        border-top: thin solid $dark2;
+        margin: $sone 0;
+        padding: $sone 0 0;
+      }
+
+      time {
+        margin: 0;
+      }
+
+      @include desktop {
+        a:not(.schemecard),
+        .schemecard span {
+          float: left;
+          display: inline-block;
+          width: 80%;
+        }
+
+        .schemecard span {
+          font-weight: 700;
+        }
+
+        time {
+          float: left;
+          text-align: right;
+          display: inline-block;
+          margin-left: 1%;
+          width: 19%;
+        }
+      }
+    }
+  }
+}

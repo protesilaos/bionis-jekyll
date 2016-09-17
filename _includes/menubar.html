@@ -1,0 +1,29 @@
+<div class="menubar">
+  <div class="menubar-inner">
+
+    <div class="menubar-header">
+      <a class="skip-link screen-reader-text" href="#content">
+        Skip to content
+      </a>
+      <a href="{{ site.baseurl | prepend: site.url }}">
+        {{ site.title }}
+      </a>
+      <small>
+        {{ site.description }}
+      </small>
+    </div>
+
+    <nav class="menubar-navigation" aria-label="Main menu">
+      {% include navigation.html %}
+    </nav>
+
+    <!-- Will display a social menu only if a file named `social` exists under `_data` -->
+
+    {% if site.data.social %}
+    <nav class="menubar-social" aria-label="Social links menu">
+      {% include social.html %}
+    </nav>
+    {% endif %}
+
+  </div>
+</div>

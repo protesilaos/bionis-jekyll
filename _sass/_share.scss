@@ -1,0 +1,35 @@
+.social-share {
+  font-family: $fontui;
+  font-size: $ssize;
+  margin: ($vrythm * 2) 0 0;
+  padding: 0;
+  @extend %clearfix;
+
+  div {
+    a {
+      color: $lbg;
+      font-weight: 400;
+      display: block;
+      margin: ($sone / 2) 0;
+      padding: ($sone / 2) $sone;
+
+      @include tablet {
+        float: left;
+        display: inline-block;
+        margin: 0 $sone 0 0;
+      }
+
+      &[href*="facebook.com"] {
+        background: #3B5998;
+      }
+
+      &[href*="twitter.com"] {
+        background: #1DA1F3;
+      }
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+}
